@@ -9,6 +9,7 @@ const ChatInput = ({ onSend }) => {
     // onSend("message");
     if (message.trim()) {
       onSend(message);
+
       setMessage("");
     }
   };
@@ -27,6 +28,7 @@ const ChatInput = ({ onSend }) => {
         zIndex: 999,
         backgroundColor: "background.default",
       }}
+      onKeyDown={(e) => e.key === "Enter" && handleSend()}
     >
       <TextField
         className="message-input"
